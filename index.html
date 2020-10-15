@@ -22,11 +22,19 @@
 </head>
 
 <body>
-    <div class="max-w-screen-xl mx-auto px-10">
+    <div class="max-w-screen-xl mx-auto px-5 md:px-10">
         <div class="flex justify-between">
-            <h1 class="text-5xl text-indigo-600 tracking-wider font-bold logo">rin</h1>
+            <h1 class="text-4xl xl:text-5xl text-indigo-600 tracking-wider font-bold logo">rin</h1>
 
-            <ul class="inline-flex items-center">
+            <div class="flex items-center md:hidden" id="nav-button">
+                <button type="button" class="text-gray-500 hover:text-gray-900 focus:outline-none focus:shadow-outline transition duration-300 ease-in-out" id="main-menu" aria-label="Main menu" aria-haspopup="true">
+                    <svg class="h-8 w-8" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <ul class="md:inline-flex items-center hidden">
                 <li>
                     <a href="/" class="text-gray-600 hover:text-gray-900 p-2 font-medium transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border-b-4 hover:border-gray-600">Home</a>
                 </li>
@@ -43,32 +51,69 @@
         </div>
     </div>
 
-    <div class="flex mt-16 justify-between">
-        <div class="max-w-3xl ml-20">
-            <h2 class="text-6xl text-gray-900 font-extrabold tracking-tight leading-none animate__animated animate__fadeIn animate__slow">
+    <div class="absolute hidden top-0 inset-x-0 m-3 z-10" id="nav-menu">
+        <div class="bg-white rounded shadow-lg">
+            <div class="flex px-5 pt-2 items-center justify-between">
+                <h1 class="logo font-bold tracking-wider text-indigo-600 text-3xl">rin</h1>
+
+                <div class="-mr-4" id="nav-close">
+                    <button type="button" class="p-2 text-gray-500 hover:text-gray-900 focus:outline-none focus:shadow-outline transition duration-300 ease-in-out" aria-label="Close">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-3">
+                <a href="/" class="text-gray-600 hover:text-gray-900 block p-2 font-medium transition duration-300 ease-in-out focus:outline-none focus:shadow-outline">Home</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 block p-2 font-medium transition duration-300 ease-in-out focus:outline-none focus:shadow-outline">Product</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 block p-2 font-medium transition duration-300 ease-in-out focus:outline-none focus:shadow-outline">About</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 block p-2 font-medium transition duration-300 ease-in-out focus:outline-none focus:shadow-outline">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-10 md:mt-16 lg:flex lg:justify-between">
+        <div class="pb-10 ml-5 md:ml-10 xl:ml-20 mx-auto overflow-hidden">
+            <h2 class="text-5xl xl:text-6xl text-gray-900 font-extrabold tracking-tight leading-none animate__animated animate__fadeIn animate__slow">
                 Software Development
                 <br>
-                <span class="text-indigo-600 text-5xl">Kami hadir untuk anda</span>
+                <span class="text-indigo-600 text-3xl xl:text-5xl">Kami hadir untuk anda</span>
             </h2>
 
-            <p class="mt-5 text-xl text-gray-600 max-w-xl animate__animated animate__fadeInUp">
+            <p class="mt-5 text-md md:text-xl text-gray-600 animate__animated animate__fadeInUp">
                 Rin Software menyediakan jasa pembuatan Website dan Aplikasi Mobile yang dapat disesuaikan dengan kebutuhan anda.
             </p>
 
             <div class="mt-16 animate__animated animate__fadeInLeft animate__delay-1s">
-                <a href="#" class="px-6 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-lg rounded shadow-lg focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                <a href="#" class="px-6 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-lg rounded shadow-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out">
                     Pesan sekarang
                 </a>
-                <a href="#"
-                    class="px-6 py-4 bg-gray-200 hover:bg-gray-300 text-gray-700 hover:text-gray-900 font-medium text-lg rounded shadow-lg focus:outline-none focus:shadow-outline transition duration-150 ease-in-out ml-3">Explore</a>
+                <a href="#" class="px-6 py-4 bg-gray-200 hover:bg-gray-300 text-gray-700 hover:text-gray-900 font-medium text-lg rounded shadow-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out ml-3">Explore</a>
             </div>
         </div>
 
-        <img src="images/background.jpg" alt="Image Background" class="animate__animated animate__zoomIn animate__delay-2s max-w-xl">
+        <img src="images/background.jpg" alt="Image Background" class="animate__animated animate__zoomIn animate__delay-2s max-w-sm xl:max-w-xl hidden lg:block">
     </div>
 
-    <div class="text-xs fixed ml-20 bottom-0 py-3 text-gray-500">
+    <div class="text-xs fixed bottom-0 right-0 lg:right-auto px-5 md:px-10 xl:px-20 py-2 text-gray-500">
         &copy Rin Software. All rights reserved.
     </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#nav-button').click(function () {
+                $('#nav-menu').removeClass('hidden')
+            })
+
+            $('#nav-close').click(function () {
+                $('#nav-menu').addClass('hidden')
+            })
+        })
+    </script>
 </body>
 </html>
